@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MeterLogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MeterLogModelStoreContainer">
+          <EntitySet Name="ElectricMeter" EntityType="MeterLogModel.Store.ElectricMeter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ElectricMeterDaily" EntityType="MeterLogModel.Store.ElectricMeterDaily" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ElectricMeterMonthly" EntityType="MeterLogModel.Store.ElectricMeterMonthly" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HeaterMeter" EntityType="MeterLogModel.Store.HeaterMeter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HeaterMeterDaily" EntityType="MeterLogModel.Store.HeaterMeterDaily" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HeaterMeterMonthly" EntityType="MeterLogModel.Store.HeaterMeterMonthly" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Temperature" EntityType="MeterLogModel.Store.Temperature" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WaterMeter" EntityType="MeterLogModel.Store.WaterMeter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WaterMeterDaily" EntityType="MeterLogModel.Store.WaterMeterDaily" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WaterMeterMonthly" EntityType="MeterLogModel.Store.WaterMeterMonthly" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="ElectricMeter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="value" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectricMeterDaily">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="value" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectricMeterMonthly">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="value" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HeaterMeter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="energy" Type="float" Nullable="false" />
+          <Property Name="volume" Type="float" Nullable="false" />
+          <Property Name="tempin" Type="float" Nullable="false" />
+          <Property Name="tempout" Type="float" Nullable="false" />
+          <Property Name="tempdiff" Type="float" Nullable="false" />
+          <Property Name="power" Type="float" Nullable="false" />
+          <Property Name="flow" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HeaterMeterDaily">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="energy" Type="float" Nullable="false" />
+          <Property Name="volume" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HeaterMeterMonthly">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="energy" Type="float" Nullable="false" />
+          <Property Name="volume" Type="float" Nullable="false" />
+          <Property Name="peak" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Temperature">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="value" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WaterMeter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WaterMeterDaily">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WaterMeterMonthly">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MeterLogModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MeterLogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ElectricMeter" EntityType="MeterLogModel.ElectricMeter" />
+          <EntitySet Name="HeaterMeter" EntityType="MeterLogModel.HeaterMeter" />
+          <EntitySet Name="Temperature" EntityType="MeterLogModel.Temperature" />
+          <EntitySet Name="WaterMeter" EntityType="MeterLogModel.WaterMeter" />
+          <EntitySet Name="HeaterMeterDaily" EntityType="MeterLogModel.HeaterMeterDaily" />
+          <EntitySet Name="HeaterMeterMonthly" EntityType="MeterLogModel.HeaterMeterMonthly" />
+          <EntitySet Name="ElectricMeterDaily" EntityType="MeterLogModel.ElectricMeterDaily" />
+          <EntitySet Name="ElectricMeterMonthly" EntityType="MeterLogModel.ElectricMeterMonthly" />
+          <EntitySet Name="WaterMeterDaily" EntityType="MeterLogModel.WaterMeterDaily" />
+          <EntitySet Name="WaterMeterMonthly" EntityType="MeterLogModel.WaterMeterMonthly" />
+        </EntityContainer>
+        <EntityType Name="ElectricMeter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="DateTime" Nullable="false" />
+          <Property Name="value" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HeaterMeter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="DateTime" Nullable="false" />
+          <Property Name="energy" Type="Double" Nullable="false" />
+          <Property Name="volume" Type="Double" Nullable="false" />
+          <Property Name="tempin" Type="Double" Nullable="false" />
+          <Property Name="tempout" Type="Double" Nullable="false" />
+          <Property Name="tempdiff" Type="Double" Nullable="false" />
+          <Property Type="Double" Name="power" Nullable="false" />
+          <Property Type="Double" Name="flow" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Temperature">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="DateTime" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="value" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WaterMeter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="DateTime" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HeaterMeterDaily">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Double" Name="energy" Nullable="false" />
+          <Property Type="Double" Name="volume" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HeaterMeterMonthly">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Double" Name="energy" Nullable="false" />
+          <Property Type="Double" Name="volume" Nullable="false" />
+          <Property Type="Double" Name="peak" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectricMeterDaily">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Double" Name="value" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectricMeterMonthly">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Double" Name="value" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WaterMeterDaily">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Int32" Name="value" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WaterMeterMonthly">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Int32" Name="value" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MeterLogModelStoreContainer" CdmEntityContainer="MeterLogEntities">
+          <EntitySetMapping Name="ElectricMeter">
+            <EntityTypeMapping TypeName="MeterLogModel.ElectricMeter">
+              <MappingFragment StoreEntitySet="ElectricMeter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HeaterMeter">
+            <EntityTypeMapping TypeName="MeterLogModel.HeaterMeter">
+              <MappingFragment StoreEntitySet="HeaterMeter">
+                <ScalarProperty Name="flow" ColumnName="flow" />
+                <ScalarProperty Name="power" ColumnName="power" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="energy" ColumnName="energy" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="tempin" ColumnName="tempin" />
+                <ScalarProperty Name="tempout" ColumnName="tempout" />
+                <ScalarProperty Name="tempdiff" ColumnName="tempdiff" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temperature">
+            <EntityTypeMapping TypeName="MeterLogModel.Temperature">
+              <MappingFragment StoreEntitySet="Temperature">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WaterMeter">
+            <EntityTypeMapping TypeName="MeterLogModel.WaterMeter">
+              <MappingFragment StoreEntitySet="WaterMeter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HeaterMeterDaily">
+            <EntityTypeMapping TypeName="MeterLogModel.HeaterMeterDaily">
+              <MappingFragment StoreEntitySet="HeaterMeterDaily">
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="energy" ColumnName="energy" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HeaterMeterMonthly">
+            <EntityTypeMapping TypeName="MeterLogModel.HeaterMeterMonthly">
+              <MappingFragment StoreEntitySet="HeaterMeterMonthly">
+                <ScalarProperty Name="peak" ColumnName="peak" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="energy" ColumnName="energy" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectricMeterDaily">
+            <EntityTypeMapping TypeName="MeterLogModel.ElectricMeterDaily">
+              <MappingFragment StoreEntitySet="ElectricMeterDaily">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectricMeterMonthly">
+            <EntityTypeMapping TypeName="MeterLogModel.ElectricMeterMonthly">
+              <MappingFragment StoreEntitySet="ElectricMeterMonthly">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WaterMeterDaily">
+            <EntityTypeMapping TypeName="MeterLogModel.WaterMeterDaily">
+              <MappingFragment StoreEntitySet="WaterMeterDaily">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WaterMeterMonthly">
+            <EntityTypeMapping TypeName="MeterLogModel.WaterMeterMonthly">
+              <MappingFragment StoreEntitySet="WaterMeterMonthly">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MeterLogModel">
+        <EntityTypeShape EntityType="MeterLogModel.ElectricMeter" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeterLogModel.HeaterMeter" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeterLogModel.Temperature" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeterLogModel.WaterMeter" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeterLogModel.HeaterMeterDaily" Width="1.5" PointX="3.375" PointY="4.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MeterLogModel.HeaterMeterMonthly" Width="1.5" PointX="5.375" PointY="3.75" Height="1.9802864583333322" />
+        <EntityTypeShape EntityType="MeterLogModel.ElectricMeterDaily" Width="1.5" PointX="5.75" PointY="6.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="MeterLogModel.ElectricMeterMonthly" Width="1.5" PointX="7.75" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="MeterLogModel.WaterMeterDaily" Width="1.5" PointX="0.75" PointY="7.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="MeterLogModel.WaterMeterMonthly" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5956835937499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
